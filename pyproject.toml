@@ -1,0 +1,25 @@
+[tool.poetry]
+authors = ["abrahumlink <307887491@qq.com>"]
+description = "A phonegame draw simulator plugin for nonebot2"
+documentation = "https://github.com/abrahum/nonebot_plugin_simdraw#readme"
+homepage = "https://github.com/abrahum/nonebot_plugin_simdraw"
+keywords = ["nonebot", "nonebot2", "draw"]
+license = "GPLv3"
+name = "nonebot-plugin-simdraw"
+packages = [
+  {include = "nonebot_plugin_simdraw/*.py"},
+]
+readme = "README.md"
+repository = "https://github.com/abrahum/nonebot_plugin_simdraw"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+nonebot2 = "^2.0.0-alpha.8"
+python = "^3.7"
+ujson = "^4.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]

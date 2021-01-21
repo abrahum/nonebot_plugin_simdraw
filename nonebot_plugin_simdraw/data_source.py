@@ -5,6 +5,8 @@ import ujson as json
 from nonebot.adapters.cqhttp import MessageSegment
 
 driver: nonebot.Driver = nonebot.get_driver()
+cachepath: str
+config: dict
 
 
 def draw(times: int, game: str):
@@ -59,11 +61,12 @@ def sim_draw(times: int, game: str, noimg=True):
 
 @driver.on_startup
 async def check_data():
+    global cachepath, config
     cachepath = os.path.join(os.getcwd(), "cache", "simdraw")
     try:
         with open(os.path.join(cachepath, "config.json"), "r") as f:
             config = json.load(f)
-        nonebot.require("simdraw").draw = sim_draw
+        nonebot.require("nonebot_plugin_simdraw").draw = sim_draw
         nonebot.logger.info("simdraw init success")
     except:
         nonebot.logger.info("config.json not found")

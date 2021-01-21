@@ -13,7 +13,7 @@
 使用以下方式调用抽卡函数
 
 ```python
-nonebot.require("simdraw").draw(times: int, game: str, noimg=True):
+nonebot.require("nonebot_plugin_simdraw").draw(times: int, game: str, noimg=True):
     return [Messages]
 ```
 

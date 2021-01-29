@@ -64,7 +64,7 @@ async def check_data():
     global cachepath, config
     cachepath = os.path.join(os.getcwd(), "cache", "simdraw")
     try:
-        with open(os.path.join(cachepath, "config.json"), "r") as f:
+        with open(os.path.join(cachepath, "config.json"), "r", encoding="utf-8") as f:
             config = json.load(f)
         nonebot.require("nonebot_plugin_simdraw").draw = sim_draw
         nonebot.logger.info("simdraw init success")

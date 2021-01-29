@@ -10,7 +10,7 @@ config: dict
 
 
 def draw(times: int, game: str):
-    with open(os.path.join(cachepath, config["%scards" % game]), "r") as f:
+    with open(os.path.join(cachepath, config["%scards" % game]), "r", encoding="utf-8") as f:
         cards = json.load(f)
     cardlist = [[] for _ in range(len(config[game]))]
     for card in cards:
